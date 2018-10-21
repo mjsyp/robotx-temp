@@ -4,6 +4,7 @@ project(wamv_localization)
 find_package(catkin REQUIRED
 	roscpp
 	rospy
+	gps_common
 	sensor_msgs
 	nav_msgs
 	std_msgs
@@ -14,6 +15,9 @@ find_package(catkin REQUIRED
 catkin_package()
 
 include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(wamv_odometry src/wamv_odom.cpp)
+target_link_libraries(wamv_odometry ${catkin_LIBRARIES})
 
 # Simulator
 #add_executable(sim nodes/sim.cpp)

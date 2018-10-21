@@ -1,12 +1,11 @@
 /*
-This node will be broadcasting the transforms for
-different frames on the wamv, namely:
+This node will be broadcasting the transforms for different frames on the wamv,
+namely:
 (i)     base_link   - the centroid of the robot
 (ii)    gps         - the position of the gps wrt the base_link
 (iii)   velodyne    - the position of the velodyne wrt the base_link
 (iv)    camera      - the position of the camera wrt the base_link
 (v)     imu         - the position of the imu wrt the base_link
-
 */
 
 #include <ros/ros.h>
@@ -76,4 +75,3 @@ int main(int argc, char** argv){
     }
     return 0;
 }
-

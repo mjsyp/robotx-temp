@@ -2,7 +2,7 @@
 
 <include file="$(find velodyne_pointcloud)/launch/32e_points_multi.launch"> </include>
 	<node pkg="advanced_navigation_driver" type="advanced_navigation_driver" name="gps" respawn="true" />
-		
+
 <launch>
 
 	<!-- Set params -->
@@ -28,6 +28,6 @@
 	</node>
 
 	<!-- launch the heartbeat -->
-	<node pkg="heartbeat" type="signal" name="heartbeat_daemon" respawn="true" output="screen" />
+	<node pkg="wamv_base" type="heartbeat" name="heartbeat_node" respawn="true" output="screen" />
 
 </launch>
