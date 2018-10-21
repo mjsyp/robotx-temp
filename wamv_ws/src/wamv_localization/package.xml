@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>wamv_navigation</name>
+  <name>wamv_localization</name>
   <version>0.0.0</version>
   <description>Navigation packages</description>
   <maintainer email="mjsyp@umich.edu">Michael Sypniewski</maintainer>

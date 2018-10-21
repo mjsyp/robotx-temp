@@ -12,6 +12,7 @@ add_message_files(
 	Gate.msg
 	ScanCode.msg
 	SymbolDock.msg
+	MotorSpeeds.msg
 )
 
 generate_messages(

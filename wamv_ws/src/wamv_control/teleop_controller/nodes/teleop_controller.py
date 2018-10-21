@@ -5,22 +5,22 @@
 # Written by: James Coller
 # Last Update: September 13, 2018
 
-# Import Libraries 
+# Import Libraries
 import rospy
 from std_msgs.msg import Int16
 from std_msgs.msg import Float32
 from std_msgs.msg import Bool
 from sensor_msgs.msg import Joy
 
-# Set Global "Activation" Boolean which will control if statements 
+# Set Global "Activation" Boolean which will control if statements
 activate = False
 autonomy = False
 
-# Function to actually read joystick and send commands 
+# Function to actually read joystick and send commands
 def sendCommands(data):
 
-	# tell it we're using the global variable vs a local one 
-    global activate 
+	# tell it we're using the global variable vs a local one
+    global activate
 
     # Read in the joystick data
     posL = data.axes[1]
@@ -39,16 +39,16 @@ def sendCommands(data):
     pub2.publish(speedR)
 
 
-# Function that gets called by the Joystick Subscriber 
+# Function that gets called by the Joystick Subscriber
 def callback(data):
 
-	# tell it we're using the global variable vs a local one 
-    global activate 
+	# tell it we're using the global variable vs a local one
+    global activate
     global autonomy
-    
+
     # Check if Telelop has been activated
     if (data.buttons[7]==True) and (autonomy==False): # start button
-        activate = True # set global boolean control var 
+        activate = True # set global boolean control var
         rospy.loginfo("Joystick Control Activated")
         pub3.publish(activate)
 
@@ -56,11 +56,11 @@ def callback(data):
         rospy.logerr("Error: Boat is running autonomously")
         activate = False
 
-    # Check to see if Teleop is deactivated 
+    # Check to see if Teleop is deactivated
     if data.buttons[6]==True: # back button
-        activate = False # set global bool 
+        activate = False # set global bool
 
-        # Reset motors to be off 
+        # Reset motors to be off
         speedL = 127
         speedR = 127
         pub1.publish(speedL)
@@ -68,7 +68,7 @@ def callback(data):
         pub3.publish(activate)
         rospy.loginfo("Joystick Control Deactivated")
 
-    # If teleop is activated, call the function to process the commands 
+    # If teleop is activated, call the function to process the commands
     if activate:
         sendCommands(data)
 
@@ -85,16 +85,16 @@ def check(bool_status):
 
 # Main Function
 if __name__ == '__main__':
-    
+
     # Setup ROS Nodes
-    rospy.init_node('Teleop_Controller', anonymous=True, log_level=rospy.DEBUG)
+    rospy.init_node('teleop_controller', log_level=rospy.DEBUG)
 
     # Setup Publishers
     global pub1
     pub1 = rospy.Publisher('LmotorSpeed',Int16, queue_size=1000)
     global pub2
     pub2 = rospy.Publisher('RmotorSpeed',Int16, queue_size=1000)
-    global pub3 
+    global pub3
     pub3 = rospy.Publisher('RemoteControlStatus',Bool, queue_size=1000)
 
     # Setup Subscriber
