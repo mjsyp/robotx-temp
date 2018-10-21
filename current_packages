@@ -1,0 +1,9 @@
+heartbeat
+wamv_bringup : wamv_tf_publisher (from frames.cpp)
+
+rviz
+gps_common : wamv_odometry
+advanced_navigation_driver : advanced_navigation_driver
+rosserial_python : serial_node.py
+ladybug3_ros_pkg : ladybug_format7_mode7.launch -> ladybug_node
+velodyne_pointcloud : 32e_points_multi.launch
