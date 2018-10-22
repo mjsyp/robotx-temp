@@ -10,7 +10,7 @@
 
 	<!-- Launch RViz -->
 	<group if="$(arg rviz)">
-		<node type="rviz" name="visual" pkg="rviz" args="-d $(find wamv_bringup)/rviz/sensors.rviz" />
+		<node type="rviz" name="visual" pkg="rviz" args="-d $(find wamv_viz)/rviz/sensors.rviz" />
 	</group>
 
 	<!-- launch package to convert NavSat to odometry -->

@@ -12,5 +12,6 @@
   <depend>sensor_msgs</depend>
   <depend>gps_common</depend>
   <depend>geometry_msgs</depend>
-  <!-- <depend>gazebo_msgs</depend> -->
+  <depend>tf</depend>
+  <depend>tf2</depend>
 </package>

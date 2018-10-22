@@ -4,13 +4,9 @@ project(wamv_bringup)
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	rospy
-#	ladybug3_ros_pkg
 	advanced_navigation_driver
 	velodyne_pointcloud
-	tf2
-	tf
 	geometry_msgs
-	gazebo_msgs
 	sensor_msgs
 	std_msgs
 	nav_msgs
@@ -18,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package()
 
-include_directories(include ${catkin_INCLUDE_DIRS})
+#include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(wamv_tf_publisher src/wamv_tf_publisher.cpp)
-target_link_libraries(wamv_tf_publisher ${catkin_LIBRARIES})
+#add_executable(wamv_tf_publisher src/wamv_tf_publisher.cpp)
+#target_link_libraries(wamv_tf_publisher ${catkin_LIBRARIES})
