@@ -4,6 +4,9 @@ project(wamv_bringup)
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	rospy
+#	ladybug3_ros_pkg
+	advanced_navigation_driver
+	velodyne_pointcloud
 	tf2
 	tf
 	geometry_msgs

@@ -7,7 +7,7 @@
 
 	<!-- DRIVER NODES -->
 	<include file="$(find wamv_bringup)/launch/launch_drivers.launch" />
-	
+
 	<!-- Launch RViz -->
 	<group if="$(arg rviz)">
 		<node type="rviz" name="visual" pkg="rviz" args="-d $(find wamv_bringup)/rviz/sensors.rviz" />
@@ -15,7 +15,7 @@
 
 	<!-- launch package to convert NavSat to odometry -->
 	<group if="$(arg navsat)">
-		<node pkg="gps_common" type="wamv_odometry" name="wamv_odometry" clear_params="true" output="screen">
+		<node pkg="wamv_localization" type="wamv_odometry" name="wamv_odometry" clear_params="true" output="screen">
 			<remap from="/navsat" to="/an_device/NavSatFix"/>
 			<remap from="/imu" to="/an_device/Imu"/>
 			<remap from="/gps" to="/gps/odom"/>

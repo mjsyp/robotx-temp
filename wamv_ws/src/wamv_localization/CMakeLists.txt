@@ -9,15 +9,15 @@ find_package(catkin REQUIRED
 	nav_msgs
 	std_msgs
 	geometry_msgs
-	gazebo_msgs
+#	gazebo_msgs
 )
 
 catkin_package()
 
-include_directories(include ${catkin_INCLUDE_DIRS})
+#include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(wamv_odometry src/wamv_odom.cpp)
-target_link_libraries(wamv_odometry ${catkin_LIBRARIES})
+#add_executable(wamv_odometry src/wamv_odom.cpp)
+#target_link_libraries(wamv_odometry ${catkin_LIBRARIES})
 
 # Simulator
 #add_executable(sim nodes/sim.cpp)
