@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="rviz" default="false" />
-    <arg name="gazebo" default="false" />
-    <arg name="navsat" default="true" />
-
+    
     <!-- Launch PID Interpreter -->
     <node pkg="wamv_control" type="pid_interpreter" name="pid_interpreter_node" />
 
